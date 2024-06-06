@@ -51,7 +51,7 @@ steps:
     artifact_paths: "output/*"
 
   - label: "CPU MPI tests"
-    command: "julia --project -e 'using Pkg; Pkg.test()'"
+    command: "julia --project --check-bounds=yes test/runtests.jl"
     env:
       CLIMACOMMS_CONTEXT: "MPI"
     artifact_paths: "output/*"
